@@ -1,0 +1,44 @@
+Inicio
+    Escribe "CAJA DE LA TIENDA"
+    Escribe ""
+
+    udTotal = 0
+    precioTotal = 0
+    terminar = falso
+
+    Mientras terminar == falso hacer
+        precioValido = falso
+        Mientras precioValido == falso hacer
+            Escribe "Introduce el precio unitario en euros (0 para terminar):"
+            Lee precio
+
+            Si precio >= 0 entonces
+                precioValido == verdadero
+            Sino
+                Escribe "El precio no puede ser negativo."
+        
+        Si precio != 0 entonces
+            udValidas = falso
+            Mientras udValidas == falso hacer  
+                Escribe "Introduce el número de unidades:"
+                Lee unidades
+                Si unidades > 0 entonces
+                    udValidas = verdadero
+                Sino
+                    Escribe "La cantidad debe ser mayor que 0."
+            
+            udTotal = udTotal + unidades
+            precioTotal = precioTotal + precio
+        Sino
+            terminar = verdadero
+    
+    Si udTotal > 0 and precioTotal > 0 entonces
+        Escribe "RESUMEN DE LA COMPRA"
+        Escribe "Unidades compradas: " + udTotal
+        Escribe "Importe antes del descuento: " + precioTotal
+
+        Si (precioTotal >= 50 and precioTotal < 100) entonces
+            descuento = 0.05
+        Si (precioTotal >= 100) entonces
+            descuento = 0.1    
+Fin
