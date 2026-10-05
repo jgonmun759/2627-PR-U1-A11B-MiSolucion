@@ -40,5 +40,14 @@ Inicio
         Si (precioTotal >= 50 and precioTotal < 100) entonces
             descuento = 0.05
         Si (precioTotal >= 100) entonces
-            descuento = 0.1    
+            descuento = 0.1
+        Escribe "Descuento aplicado: " + descuento * 100 + " %"
+
+        valorDescuento = precioTotal * descuento
+        Escribe "Descuento: " + valorDescuento + " euros"
+
+        precioReal = precioTotal - valorDescuento
+        Escribe "Importe final: " + precioReal + " euros"
+    Sino
+        Escribe "No se han registrado productos."
 Fin
