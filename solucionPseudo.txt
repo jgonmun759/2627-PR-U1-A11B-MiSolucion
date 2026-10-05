@@ -4,33 +4,33 @@ Inicio
 
     udTotal = 0
     precioTotal = 0
-    terminar = falso
+    terminar = False
 
-    Mientras terminar == falso hacer
-        precioValido = falso
-        Mientras precioValido == falso hacer
+    Mientras terminar == False hacer
+        precioValido = False
+        Mientras precioValido == False hacer
             Escribe "Introduce el precio unitario en euros (0 para terminar):"
             Lee precio
 
             Si precio >= 0 entonces
-                precioValido == verdadero
+                precioValido == True
             Sino
                 Escribe "El precio no puede ser negativo."
         
         Si precio != 0 entonces
-            udValidas = falso
-            Mientras udValidas == falso hacer  
+            udValidas = False
+            Mientras udValidas == False hacer  
                 Escribe "Introduce el número de unidades:"
                 Lee unidades
                 Si unidades > 0 entonces
-                    udValidas = verdadero
+                    udValidas = True
                 Sino
                     Escribe "La cantidad debe ser mayor que 0."
             
             udTotal = udTotal + unidades
             precioTotal = precioTotal + precio
         Sino
-            terminar = verdadero
+            terminar = True
     
     Si udTotal > 0 and precioTotal > 0 entonces
         Escribe "RESUMEN DE LA COMPRA"
